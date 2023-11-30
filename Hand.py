@@ -723,7 +723,7 @@ class HoldemOmahaHand(Hand):
             hhc.readShowdownActions(self)
             # Read actions in street order
             for street, text in self.streets.items():
-                if text and (street is not "PREFLOP"):
+                if text and (street != "PREFLOP"):
                     hhc.readCommunityCards(self, street)
             for street in self.actionStreets:
                 if self.streets[street]:
